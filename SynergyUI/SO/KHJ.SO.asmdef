@@ -1,0 +1,18 @@
+{
+    "name": "KHJ.SO",
+    "rootNamespace": "KHJ.SO",
+    "references": [
+        "GUID:d1af6e3b10ea998489ff83ea4c4dfb0a",
+        "GUID:9e76ffd1f3f77a246968f93aa898a174",
+        "GUID:6ed352e7ea5268f469b3afca9c49a1de"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,17 @@
+{
+    "name": "KHJ.Data",
+    "rootNamespace": "KHJ.Data",
+    "references": [
+        "GUID:6ed352e7ea5268f469b3afca9c49a1de",
+        "GUID:d1af6e3b10ea998489ff83ea4c4dfb0a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

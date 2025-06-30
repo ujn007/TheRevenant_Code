@@ -1,0 +1,26 @@
+{
+    "name": "KHJ.UI",
+    "rootNamespace": "KHJ.UI",
+    "references": [
+        "GUID:8057891fc0ce59f429c76320e3f807a6",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:bc2bccc7fdd309a4a9509427df1b7d94",
+        "GUID:5f48f6f7909e3104bbe8e554628541ac",
+        "GUID:ca5b8601c5ebe64409c1d85140356a0c",
+        "GUID:5ff5028d970048f469e1a9b38c2e5a45",
+        "GUID:a88e20ec90497d6429de4f692695fe43",
+        "GUID:9bd4c20490ee0004db30075e8372ebe1",
+        "GUID:a68c710bc0e4d114cae4f2804c7b9f34",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:be222a91110cb5245a3fb9738893c84e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,24 @@
+{
+    "name": "KHJ.Dialogue",
+    "rootNamespace": "KHJ.Dialogue",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:bc2bccc7fdd309a4a9509427df1b7d94",
+        "GUID:5ff5028d970048f469e1a9b38c2e5a45",
+        "GUID:6374a02135f2b7240980125fea8c745f",
+        "GUID:df520f69b0881294b925a872bae7d661",
+        "GUID:0664225a2ff14d64ea099dd6240c2f4e",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:8057891fc0ce59f429c76320e3f807a6",
+        "GUID:be222a91110cb5245a3fb9738893c84e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
