@@ -1,8 +1,6 @@
-using System;
-using Main.Runtime.Core.StatSystem;
+using KHJ.Shared;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
-using PJH.Runtime.Players;
 using Sirenix.Serialization;
 using UnityEngine;
 

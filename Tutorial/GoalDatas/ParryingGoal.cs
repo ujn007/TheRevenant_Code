@@ -1,6 +1,4 @@
 using PJH.Runtime.Players;
-using System;
-using YTH.Enemies;
 
 namespace KHJ.Tutorial
 {

@@ -1,25 +1,32 @@
+using System;
+using BIS.Manager;
+using FMODUnity;
+using KHJ.Shared;
+using Main.Core;
 using Main.Runtime.Core.Events;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
 using PJH.Runtime.Players;
 using Sirenix.Serialization;
-using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace KHJ.Passive
 {
-    [CreateAssetMenu(fileName = "ObtainShield", menuName = "SO/Passive/Active/Low/ObtainShield")]
-    public class ObtainShield : PassiveSO, IBuffPassive, IEffectPoolPassive, IModifierStatPassive
+    [CreateAssetMenu(fileName = "ObtainShield", menuName = "SO/Passive/Low/ObtainShield")]
+    public class ObtainShield : PassiveSO, IEffectPoolPassive, IModifierStatPassive
     {
-        [SerializeField] private GameEventChannelSO _eventSO;
-        [SerializeField] private int _addShieldPercent;
-        [field: SerializeField, OdinSerialize]  public ModifierStatInfo ModifierStatInfo { get; set; }
-        [field: SerializeField, OdinSerialize] public BuffPassiveInfo BuffPassiveInfo { get; set; }
+        public EventReference sound;
+        private GameEventChannelSO _eventSO;
+        [SerializeField] private int _percent;
+        [field: SerializeField, OdinSerialize] public ModifierStatInfo ModifierStatInfo { get; set; }
         [field: SerializeField] public PoolTypeSO PoolType { get; set; }
 
         public override void EquipPiece(IPlayer player)
         {
             base.EquipPiece(player);
+            _eventSO = AddressableManager.Load<GameEventChannelSO>("GameEventChannel");
+
             _eventSO.AddListener<StartWave>(HandleStartWaveEvent);
         }
 
@@ -31,17 +38,12 @@ namespace KHJ.Passive
 
         private void HandleStartWaveEvent(StartWave wave)
         {
-            BuffPassiveInfo.ApplyBuffEvent?.Invoke();
-        }
-
-        public void StartBuff()
-        {
-            ModifierStatInfo.AddModifierEvent?.Invoke(ModifierStatInfo);
-            _player.GetCompo<PlayerEffect>().PlayEffectAttachedToBody(PoolType, HumanBodyBones.Spine);
-        }
-
-        public void EndBuff()
-        {
+            int rand = Random.Range(1, 101);
+            if (rand <= _percent)
+            {
+                ModifierStatInfo.AddModifierEvent?.Invoke(ModifierStatInfo);
+                _player.GetCompo<PlayerEffect>().PlayEffectAttachedToBody(PoolType, HumanBodyBones.Spine);
+            }
         }
     }
 }

@@ -35,7 +35,7 @@ namespace KHJ.UI
 
                 string iconName = roomType.ToString() + "RoomIcon";
                 Image image = transform.Find(iconName).GetComponent<Image>();
-                image.enabled = false;
+                image.gameObject.SetActive(false);
                 typeImageDic[roomType] = image;
             }
         }
@@ -48,9 +48,6 @@ namespace KHJ.UI
 
         public void SetStartRoomOutLine(bool v)
         {
-            print("켜ㅛ졌닫다다다다ㅏ다다다다ㅏ다다ㅏ");
-            print(outLine);
-            print(v);
             outLine.enabled = v;
         }
 
@@ -65,8 +62,7 @@ namespace KHJ.UI
         public void SetTypeIcon(SpecialRoomType type)
         {
             if (type == SpecialRoomType.None) return;
-            print(type.ToString());
-            typeImageDic[type].enabled = true;
+            typeImageDic[type].gameObject.SetActive(true);
         }
     }
 }

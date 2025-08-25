@@ -1,21 +1,24 @@
-using BIS.Manager;
 using BIS.UI.Popup;
-using PJH.Runtime.Players;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Main.Core;
+using Main.Runtime.Core.Events;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Debug = Main.Core.Debug;
+using Managers = BIS.Manager.Managers;
 
 namespace KHJ.Dialogue
 {
     public class DialoguePopupUI : PopupUI
     {
+        public event Action DialogueFinishEvent;
         [SerializeField] private Transform _buttonGroup;
         private List<(Button, TMP_Text)> _choiseButtonList = new();
         private DialogueSO _currentData;
-        public event Action DialogueFinishEvent;
+
 
         private enum Texts
         {
@@ -27,7 +30,6 @@ namespace KHJ.Dialogue
         {
             if (base.Init() == false)
                 return false;
-
             for (int i = 0; i < _buttonGroup.childCount; i++)
             {
                 Transform btnTrm = _buttonGroup.GetChild(i);
@@ -35,19 +37,24 @@ namespace KHJ.Dialogue
                 TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
 
                 int index = i;
-                button.onClick.AddListener(() => HandleChoiseBtn(index));
+                button.onClick.AddListener(() => HandleChoiceBtn(index));
                 button.gameObject.SetActive(false);
                 _choiseButtonList.Add((button, buttonText));
             }
 
             return true;
         }
+
         public void ShowText(DialogueSO data, bool isFinishMove = false, bool isDontMove = true)
         {
-            print("2222");
             _currentData = data;
             if (isDontMove == true)
+            {
+                var evt = GameEvents.EnableCameraMovement;
+                evt.enableCameraMovmement = false;
+                _gameEventChannel.RaiseEvent(evt);
                 _inputSO.EnablePlayerInput(false);
+            }
 
             BindTexts(typeof(Texts));
 
@@ -60,12 +67,11 @@ namespace KHJ.Dialogue
             int dataLineLength = data.DialogueLines.Count;
             bool isChoiceDialogue = data.isDialogueChoise;
 
-            var wait = new WaitForSeconds(0.015f);
+            var wait = new WaitForSecondsRealtime(0.015f);
 
             for (int i = 0; i < dataLineLength; ++i)
             {
                 GetText((int)Texts.NameText).text = data.DialogueLines[i].speaker;
-
                 string line = data.DialogueLines[i].contents;
                 text.text = "";
 
@@ -74,19 +80,21 @@ namespace KHJ.Dialogue
                     text.text += line[j];
                     yield return wait;
 
-                    if (Input.GetKeyDown(KeyCode.Return))
+                    Main.Runtime.Manager.Managers.FMODManager.PlayTypingSound();
+                    if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
                     {
                         text.text = line;
-                        break; // Move Next Line
+                        break;
                     }
                 }
 
                 if (i + 1 == dataLineLength && isChoiceDialogue) break;
+                yield return new WaitForSecondsRealtime(0.5f);
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space));
+                Main.Runtime.Manager.Managers.FMODManager.PlayTextClickSound();
                 data.DialogueLines[i].speakEvent?.Invoke();
             }
 
-            print(isChoiceDialogue);
             if (isChoiceDialogue)
             {
                 for (int i = 0; i < data.dialogueChoiseSOList.Count; i++)
@@ -100,21 +108,20 @@ namespace KHJ.Dialogue
                 data.DialogueFinishEvent?.Invoke();
                 this.DialogueFinishEvent?.Invoke();
                 this.DialogueFinishEvent = null;
-                if (isFinishMove == true)
-                    _inputSO.EnablePlayerInput(true);
+
                 Managers.UI.ClosePopupUI(this);
             }
         }
-        private void HandleChoiseBtn(int index)
+
+        private void HandleChoiceBtn(int index)
         {
+            Main.Runtime.Manager.Managers.FMODManager.PlayTextClickSound();
+
             DialogueSO nextDialogue = _currentData.dialogueChoiseSOList[index].dialogueSO;
 
-            for (int i = 0; i < _currentData.dialogueChoiseSOList.Count; i++)   
+            for (int i = 0; i < _currentData.dialogueChoiseSOList.Count; i++)
                 _choiseButtonList[i].Item1.gameObject.SetActive(false);
 
-            _inputSO.EnablePlayerInput(true);
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
 
             StartCoroutine(ShowTextCoroutine(nextDialogue));
         }

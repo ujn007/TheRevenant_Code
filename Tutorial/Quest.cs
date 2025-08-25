@@ -21,7 +21,8 @@ namespace KHJ.Tutorial
         public void CheckGoals()
         {
             Completed = GoalSO.Completed;
-            if (Completed) GiveReward();
+            bool isCanGiveReward = Completed && Time.timeScale > 0;
+            if (isCanGiveReward) GiveReward();
         }
 
         public virtual void GiveReward()

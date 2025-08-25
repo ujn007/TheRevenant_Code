@@ -1,11 +1,13 @@
 using BIS.Data;
+using BIS.Manager;
+using FMODUnity;
+using KHJ.Shared;
 using Main.Runtime.Agents;
-using Main.Runtime.Core.Events;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
-using PJH.Runtime.Players;
 using System;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 using Random = UnityEngine.Random;
 
 namespace KHJ.Passive
@@ -13,11 +15,12 @@ namespace KHJ.Passive
     [CreateAssetMenu(fileName = "BadHandPassiveSO", menuName = "SO/Passive/Middle/BadHandPassiveSO")]
     public class BadHandPassiveSO : PassiveSO, IActivePassive, IEffectPoolPassive
     {
-        [SerializeField] private CurrencySO _money;
+        public EventReference sound;
+    private CurrencySO _money;
         [SerializeField] private int hitMoney, killMoney;
         [Range(1, 100)][SerializeField] private int hitMoneyPercent;
 
-        [field:SerializeField] public PoolTypeSO PoolType { get; set; }
+        [field: SerializeField] public PoolTypeSO PoolType { get; set; }
 
         public override void UnEquipPiece()
         {
@@ -37,6 +40,7 @@ namespace KHJ.Passive
 
         private void HandleHitEvent(HitInfo info)
         {
+            _money = Managers.Resource.Load<CurrencySO>("Money");
             Agent enemy = info.hitTarget as Agent;
             Vector3 hitPoint = enemy.HealthCompo.GetDamagedInfo.hitPoint;
 
@@ -51,6 +55,7 @@ namespace KHJ.Passive
             if (rand <= hitMoneyPercent)
             {
                 _money.AddAmmount(hitMoney);
+                RuntimeManager.PlayOneShot(sound, hitPoint);
                 PlayEffect(PoolType, hitPoint, Quaternion.identity);
             }
         }

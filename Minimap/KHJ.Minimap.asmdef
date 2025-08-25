@@ -1,0 +1,18 @@
+{
+    "name": "KHJ.Minimap",
+    "rootNamespace": "KHJ.Minimap",
+    "references": [
+        "GUID:ca5b8601c5ebe64409c1d85140356a0c",
+        "GUID:5ff5028d970048f469e1a9b38c2e5a45",
+        "GUID:a88e20ec90497d6429de4f692695fe43"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -23,7 +23,6 @@ namespace KHJ.UI
 
         private void Awake()
         {
-            print("이거 어웨이크야");
             roomGenrator = FindFirstObjectByType<RoomGenrator>();
             roomManager.CurrentRoomChangeActon += HandleChangeCurrentRoomEvent;
         }
@@ -41,7 +40,6 @@ namespace KHJ.UI
 
         private void Initialize()
         {
-            print("Inininn");
             RoomUI roomUI = roomUIDic[(4, 4)];
             roomUI.SetStartRoomOutLine(true);
             mapGroup.position += -(roomUI.Rect.position - mapGroup.position);
@@ -49,7 +47,6 @@ namespace KHJ.UI
 
         private void HandleChangeCurrentRoomEvent(RoomComponent roomCompo)
         {
-            print("CurrentRoomChangeActonCurrentRoomChangeActonCurrentRoomChangeActon");
             MapInfo info = roomCompo.Info;
 
             RoomUI roomUI = roomUIDic[(info.x, info.y)];
@@ -65,7 +62,6 @@ namespace KHJ.UI
         {
             roomUIDic.Clear();
 
-            // 1. 좌표 범위 계산
             int minX = int.MaxValue, minY = int.MaxValue;
             int maxX = int.MinValue, maxY = int.MinValue;
 
@@ -78,7 +74,6 @@ namespace KHJ.UI
                 if (map.y > maxY) maxY = map.y;
             }
 
-            // 2. 중앙 정렬을 위한 offset 계산
             RectTransform sampleTrm = roomImage.transform as RectTransform;
             float roomWidth = sampleTrm.sizeDelta.x + interval;
             float roomHeight = sampleTrm.sizeDelta.y + interval;

@@ -40,8 +40,6 @@ namespace KHJ
 
         private void Start()
         {
-            Debug.LogWarning(rangeX);
-            Debug.LogWarning(rangeY);
             slotBoard = new SynergySlotUI[rangeX, rangeY];
             synergyBoard = new SynergyType[rangeX, rangeY];
 
@@ -56,7 +54,6 @@ namespace KHJ
             DetectTriangle();
         }
 
-        //private Vector2Int before;
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.U))

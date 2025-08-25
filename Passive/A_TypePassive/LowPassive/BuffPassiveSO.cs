@@ -1,4 +1,4 @@
-using Main.Runtime.Core.StatSystem;
+using KHJ.Shared;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
 using PJH.Runtime.Players;
@@ -15,14 +15,13 @@ namespace KHJ.Passive
         public override void EquipPiece(IPlayer player)
         {
             base.EquipPiece(player);
-
             ModifierStatInfo.AddModifierEvent?.Invoke(ModifierStatInfo);
         }
 
         public override void UnEquipPiece()
         {
-            base.UnEquipPiece();
             ModifierStatInfo.RemoveModifierEvent?.Invoke(ModifierStatInfo);
+            base.UnEquipPiece();
         }
     }
 }

@@ -1,9 +1,9 @@
+using KHJ.Shared;
 using Main.Runtime.Agents;
 using Main.Runtime.Core.StatSystem;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
 using PJH.Runtime.Players;
-using System;
 using UnityEngine;
 
 namespace KHJ.Passive
@@ -14,7 +14,7 @@ namespace KHJ.Passive
         [SerializeField] private StatSO _powerStatSO;
         [SerializeField] private int _increasePercent;
 
-        [field:SerializeField] public PoolTypeSO PoolType { get; set; }
+        [field: SerializeField] public PoolTypeSO PoolType { get; set; }
 
         private float IncPercRatio => _increasePercent * 0.01f;
 

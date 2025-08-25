@@ -1,8 +1,9 @@
+using FMODUnity;
+using KHJ.Shared;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
 using PJH.Runtime.Players;
 using Sirenix.Serialization;
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,6 +12,7 @@ namespace KHJ.Passive
     [CreateAssetMenu(fileName = "InvincibilityChancePassiveSO", menuName = "SO/Passive/Middle/InvincibilityChancePassiveSO")]
     public class InvincibilityChancePassiveSO : PassiveSO, IActivePassive, IBuffPassive, ICooldownPassive, IEffectPoolPassive
     {
+        public EventReference sound;
         [SerializeField] private int _invincibilityPercent;
 
         [field: SerializeField, OdinSerialize] public BuffPassiveInfo BuffPassiveInfo { get; set; }
@@ -43,6 +45,7 @@ namespace KHJ.Passive
             if (rand < _invincibilityPercent)
             {
                 BuffPassiveInfo.ApplyBuffEvent?.Invoke();
+                RuntimeManager.PlayOneShot(sound);
                 _player.GetCompo<PlayerEffect>().PlayEffectAttachedToBody(PoolType, HumanBodyBones.Spine);
             }
         }

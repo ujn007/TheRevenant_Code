@@ -1,8 +1,10 @@
+using KHJ.Shared;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
 using PJH.Runtime.Players;
 using Sirenix.Serialization;
 using System;
+using FMODUnity;
 using UnityEngine;
 
 namespace KHJ.Passive
@@ -15,6 +17,7 @@ namespace KHJ.Passive
         [field: SerializeField, OdinSerialize] public BuffPassiveInfo BuffPassiveInfo { get; set; }
         [field: SerializeField] public PoolTypeSO PoolType { get; set; }
 
+        public EventReference endNightSound;
         private PlayerHealth _playerHealth;
 
         public override void EquipPiece(IPlayer player)
@@ -32,13 +35,12 @@ namespace KHJ.Passive
 
         private void HandleAvoidEvent()
         {
-            Debug.Log("회피 시작작작작");
             BuffPassiveInfo.ApplyBuffEvent?.Invoke();
         }
 
         public void StartBuff()
         {
-            Debug.Log("버프 시작작작작");
+            RuntimeManager.PlayOneShot(endNightSound, _player.transform.position);
             _player.HealthCompo.IsInvincibility = true;
             _player.GetCompo<PlayerEffect>().PlayEffectAttachedToBody(PoolType, HumanBodyBones.Spine);
             ModifierStatInfo.AddModifierEvent?.Invoke(ModifierStatInfo);

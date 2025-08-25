@@ -1,22 +1,23 @@
+using KHJ.Shared;
 using Main.Runtime.Agents;
-using Main.Runtime.Core;
 using Main.Runtime.Core.Events;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
 using Sirenix.Serialization;
-using System;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
-using UnityEngine.UIElements;
+using Debug = Main.Core.Debug;
 
 namespace KHJ.Passive
 {
     [CreateAssetMenu(fileName = "FrozenPassiveSO", menuName = "SO/Passive/High/FrozenPassiveSO")]
     public class FrozenPassiveSO : PassiveSO, ICooldownPassive, IActivePassive, IEffectPoolPassive
     {
+        public EventReference frozenSound;
         [SerializeField] private float _attackRadius;
         [SerializeField] private float _freezeDuration;
-        private float _freezeValue = 0;
+        private float _freezeValue = 100f;
 
         [field: SerializeField, OdinSerialize] public CooldownPassiveInfo CooldownPassiveInfo { get; set; }
         [field: SerializeField] public PoolTypeSO PoolType { get; set; }
@@ -35,10 +36,16 @@ namespace KHJ.Passive
         {
             Agent enemy = info.hitTarget as Agent;
             List<Agent> enemyFinds = FindEnemiesInRange(enemy.transform, _attackRadius);
-            enemyFinds.ForEach(enemy => enemy.HealthCompo.ailmentStat.ApplyAilments(Ailment.Slow, _freezeDuration, _freezeValue));
-            CooldownPassiveInfo.StartCooldownEvent?.Invoke();
-
+            enemyFinds.ForEach(FreezeTarget);
+            FreezeTarget(enemy);
             PlayEffect(enemy, enemyFinds);
+            CooldownPassiveInfo.StartCooldownEvent?.Invoke();
+        }
+
+        private void FreezeTarget(Agent target)
+        {
+            RuntimeManager.PlayOneShot(frozenSound, target.transform.position);
+            target.HealthCompo.ailmentStat.ApplyAilments(Ailment.Slow, _freezeDuration, _freezeValue);
         }
 
         private void PlayEffect(Agent enemy, List<Agent> enemyFinds)
@@ -59,10 +66,9 @@ namespace KHJ.Passive
                 float particleSpeed = 40f;
                 float lifetime = distance / particleSpeed;
 
-                evt.lifeTime = lifetime; 
+                evt.lifeTime = enemy != enem ? lifetime : 0.01f;
                 _spawnEventChannel.RaiseEvent(evt);
             }
-          
         }
     }
 }

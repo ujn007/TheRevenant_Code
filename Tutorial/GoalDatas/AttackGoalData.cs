@@ -1,9 +1,5 @@
 using Main.Runtime.Combat;
-using Main.Runtime.Combat.Core;
 using PJH.Runtime.Players;
-using System;
-using UnityEngine;
-using YTH.Enemies;
 
 namespace KHJ.Tutorial
 {
@@ -13,8 +9,13 @@ namespace KHJ.Tutorial
         public override void Init(Goal goal, Player player, TutorialEnemyGroup enemyGroup)
         {
             base.Init(goal, player, enemyGroup);
-            enemy.GetComponent<Health>().OnApplyDamaged += HandleEnemyHit;
-            player.GetCompo<PlayerAttack>().OnAttack += HandleAttack;
+
+            goal.ShowDialogue(0, () =>
+            {
+                EnableInputs(true);
+                enemy.GetComponent<Health>().OnApplyDamaged += HandleEnemyHit;
+                player.GetCompo<PlayerAttack>().OnAttack += HandleAttack;
+            });
         }
 
         public override void HandleEndEvent()

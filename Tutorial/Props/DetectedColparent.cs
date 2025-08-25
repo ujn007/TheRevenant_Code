@@ -1,9 +1,6 @@
 using BIS.Manager;
 using Main.Runtime.Core.Events;
-using NUnit.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace KHJ.Tutorial
@@ -26,7 +23,6 @@ namespace KHJ.Tutorial
         }
         private void HandleClearTut(ClearTutorial tutorial)
         {
-            print("이벤트 클리어어어어어어어 문열어!!!!");
             OpenDoor();
         }
 

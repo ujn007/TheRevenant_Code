@@ -1,3 +1,5 @@
+using FMODUnity;
+using KHJ.Shared;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
 using PJH.Runtime.Players;
@@ -10,6 +12,7 @@ namespace KHJ.Passive
     [CreateAssetMenu(fileName = "ShieldPassiveSO", menuName = "SO/Passive/Middle/ShieldPassiveSO")]
     public class ShieldPassiveSO : PassiveSO, IModifierStatPassive, IActivePassive, IEffectPoolPassive
     {
+        public EventReference sound;
         [field: SerializeField, OdinSerialize] public ModifierStatInfo ModifierStatInfo { get; set; }
         [field: SerializeField] public PoolTypeSO PoolType { get; set; }
 
@@ -33,6 +36,7 @@ namespace KHJ.Passive
             if (rand <= _percent)
             {
                 ModifierStatInfo.AddModifierEvent?.Invoke(ModifierStatInfo);
+                RuntimeManager.PlayOneShot(sound);
                 _player.GetCompo<PlayerEffect>().PlayEffectAttachedToBody(PoolType, HumanBodyBones.Spine);
             }
         }

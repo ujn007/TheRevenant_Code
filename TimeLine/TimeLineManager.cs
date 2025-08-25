@@ -7,9 +7,11 @@ using OccaSoftware.RadialBlur.Runtime;
 using PJH.Runtime.Core.PlayerCamera;
 using PJH.Runtime.Players;
 using System.Collections;
+using FIMSpace;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Rendering;
+using SceneManagerEx = Main.Runtime.Manager.SceneManagerEx;
 
 namespace KHJ
 {
@@ -23,14 +25,15 @@ namespace KHJ
 
         [SerializeField] private Volume pp;
         [SerializeField] private VolumeProfile vp;
-   private PlayerInputSO inputSO;
         [SerializeField] private PlayerCamera playerCam;
         [SerializeField] private LegsAnimator playerLegAnim;
+        [SerializeField] private LeaningAnimator playerLeaningAnim;
         [SerializeField] private CanvasGroup gameSceneGroup;
         [SerializeField] private bool isNotSeeCutScene;
         [SerializeField] private TimelineSkipper skiper;
 
-        private Player player;
+        private Player _player;
+        private PlayerCamera _playerCamera;
 
         #region Volume
 
@@ -83,13 +86,18 @@ namespace KHJ
 
         private void Awake()
         {
-            inputSO = AddressableManager.Load<PlayerInputSO>("PlayerInputSO");
-            player = PlayerManager.Instance.Player as Player;
-            player.GetCompo<PlayerAnimator>().Animancer.enabled = false;
+            _player = PlayerManager.Instance.Player as Player;
+            _playerCamera = PlayerManager.Instance.PlayerCamera;
+            playerLeaningAnim.enabled = false;
+            playerLegAnim.enabled = false;
+            _gameEventChannelSO = AddressableManager.Load<GameEventChannelSO>("GameEventChannel");
         }
 
         private void Start()
         {
+            _player.GetCompo<PlayerAnimator>().Animancer.enabled = false;
+            _player.GetCompo<PlayerMovement>().CC.enabled = false;
+
             if (!isNotSeeCutScene)
                 StartCoroutine(WaitOneFrame());
         }
@@ -97,13 +105,15 @@ namespace KHJ
         private IEnumerator WaitOneFrame()
         {
             yield return null;
+            SceneManagerEx.Instance.CurrentScene.SettingForTimeline();
+            SceneManagerEx.Instance.CurrentScene.VolumeForTimeline();
             playableDirector.Play();
         }
 
         public void EnableInputs(bool isEn)
         {
-            inputSO.EnablePlayerInput(isEn);
-            inputSO.EnableUIInput(isEn);
+            _player.PlayerInput.EnablePlayerInput(isEn);
+            _player.PlayerInput.EnableUIInput(isEn);
         }
 
         public void EndPlayerSet()
@@ -125,14 +135,22 @@ namespace KHJ
 
         public void GameEnd()
         {
+            SceneManagerEx.Instance.CurrentScene.SettingForEndTimeline();
+            SceneManagerEx.Instance.CurrentScene.VolumeForEndTimeline();
             pp.profile = vp;
             skiper.TimeLineEnd();
-            player.GetCompo<PlayerAnimator>().Animancer.enabled = true;
+            _player.transform.localPosition = Vector3.zero;
+            _player.GetCompo<PlayerMovement>().CC.enabled = true;
+            playerLeaningAnim.User_AfterTeleport();
+            playerLeaningAnim.enabled = true;
+            _player.GetCompo<PlayerAnimator>().Animancer.enabled = true;
+            _player.ModelTrm.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+            _playerCamera.enabled = true;
+            _gameEventChannelSO.RaiseEvent(GameEvents.StartTutorial);
         }
 
         public void GameStart()
         {
-            _gameEventChannelSO = AddressableManager.Load<GameEventChannelSO>("GameEventChannel");
             GameEvents.SceneChangeEvent.changeSceneName = _sceneName;
             _gameEventChannelSO.RaiseEvent(GameEvents.SceneChangeEvent);
         }

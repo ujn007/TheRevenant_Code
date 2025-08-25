@@ -1,5 +1,4 @@
 using PJH.Runtime.Players;
-using System;
 using UnityEngine;
 using YTH.Enemies;
 
@@ -25,6 +24,18 @@ namespace KHJ.Tutorial
         public void OnDestroy()
         {
             goal.OnEnd -= HandleEndEvent;
+        }
+
+        protected void EnableInputs(bool isEn)
+        {
+            player.PlayerInput.EnablePlayerInput(isEn);
+            player.PlayerInput.EnableUIInput(isEn);
+        }
+
+        protected void EnableCursor(bool isEnable)
+        {
+            Cursor.lockState = isEnable ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = isEnable;
         }
 
         public abstract void HandleEndEvent();

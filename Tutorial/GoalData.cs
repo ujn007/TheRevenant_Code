@@ -2,14 +2,13 @@ using PJH.Runtime.Players;
 using System;
 using TypeInspector;
 using UnityEngine;
-using YTH.Enemies;
 
 namespace KHJ.Tutorial
 {
     [CreateAssetMenu(fileName = "GoalDataSO", menuName = "SO/Tutorial/GoalDataSO")]
     public class GoalData : ScriptableObject
     {
-        private GoalDataElem goalDataElem;
+        public GoalDataElem goalDataElem;
 
         public void Init(Goal goal, Player player, TutorialEnemyGroup enemyGroup, TypeReference dataType)
         {

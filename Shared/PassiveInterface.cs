@@ -1,11 +1,9 @@
 using Main.Runtime.Core.StatSystem;
 using Sirenix.OdinInspector;
-using System.Collections.Generic;
 using System;
 using UnityEngine;
-using Main.Runtime.Agents;
 
-namespace KHJ.Passive
+namespace KHJ.Shared
 {
     public enum ModifierType
     {
@@ -46,7 +44,7 @@ namespace KHJ.Passive
 
         public ModifierType modifierType;
     }
-    
+
     public class ModifierStatInfo
     {
         public ModifierStat[] ModifierStats;
@@ -61,6 +59,6 @@ namespace KHJ.Passive
 
     public interface IEffectPoolPassive
     {
-        public PoolTypeSO PoolType { get; set; }    
+        public PoolTypeSO PoolType { get; set; }
     }
 }

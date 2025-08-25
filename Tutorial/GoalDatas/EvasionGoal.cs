@@ -1,6 +1,4 @@
-using Opsive.BehaviorDesigner.Runtime;
 using PJH.Runtime.Players;
-using YTH.Enemies;
 
 namespace KHJ.Tutorial
 {

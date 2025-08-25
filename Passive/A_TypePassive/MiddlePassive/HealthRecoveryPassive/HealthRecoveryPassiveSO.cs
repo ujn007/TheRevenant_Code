@@ -1,9 +1,9 @@
-using DG.Tweening;
+using FMODUnity;
+using KHJ.Shared;
 using Main.Runtime.Combat;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
 using PJH.Runtime.Players;
-using RayFire.DotNet;
 using Sirenix.Serialization;
 using UnityEngine;
 
@@ -12,6 +12,7 @@ namespace KHJ.Passive
     [CreateAssetMenu(fileName = "HealthRecoveryPassiveSO", menuName = "SO/Passive/Middle/HealthRecoveryPassive")]
     public class HealthRecoveryPassiveSO : PassiveSO, IActivePassive, ICooldownPassive, IEffectPoolPassive
     {
+        public EventReference sound;
         [Range(1, 100)][SerializeField] private float _percent;
         [Range(1, 100)][SerializeField] private float _increaseHelthPercent;
         private float PercentAsRatio => _percent * 0.01f;
@@ -43,6 +44,7 @@ namespace KHJ.Passive
             if (playerHP.CurrentHealth < playerHP.MaxHealth * PercentAsRatio)
             {
                 playerHP.CurrentHealth += playerHP.MaxHealth * IncreaseHeltPercentAsRatio;
+                RuntimeManager.PlayOneShot(sound);
                 _player.GetCompo<PlayerEffect>().PlayEffectAttachedToBody(PoolType, HumanBodyBones.Spine);
             }
         }

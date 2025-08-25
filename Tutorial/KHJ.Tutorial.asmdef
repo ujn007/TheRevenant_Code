@@ -8,7 +8,6 @@
         "Main.Runtime.Agent",
         "Main.Runtime.PlayerManager",
         "Main.Shared",
-        "TypeInspector",
         "Kybernetik.Animancer",
         "Main.Runtime.Combat",
         "DOTween.Modules",
@@ -23,7 +22,13 @@
         "PJH.Runtime.Players",
         "KHJ.Dialogue",
         "BIS.Events",
-        "BIS.UI.Scene"
+        "BIS.UI.Scene",
+        "BIS.Shared",
+        "PJH.Runtime.Player.CommandAction",
+        "KHJ.Passive",
+        "PJH.Runtime.PlayerPassive",
+        "PJH.Shared",
+        "TypeInspector"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

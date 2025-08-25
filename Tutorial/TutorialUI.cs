@@ -1,10 +1,8 @@
-using BIS.Data;
 using BIS.Manager;
 using DG.Tweening;
 using KHJ.Dialogue;
 using Main.Runtime.Core.Events;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -24,6 +22,8 @@ namespace KHJ.Tutorial
         private CanvasGroup canvasGroup;
         private List<AmountUI> imageList = new();
 
+        private CanvasGroup _passiveInfoCanvasGroup;
+
         private void Awake()
         {
             canvasGroup = GetComponentInParent<CanvasGroup>();
@@ -39,6 +39,10 @@ namespace KHJ.Tutorial
                 for (int i = 0; i < info.RequiredAmount; i++)
                     imageList.Add(Instantiate(amountImagePF, amountImageContainer));
 
+                if (!_passiveInfoCanvasGroup)
+                    _passiveInfoCanvasGroup = GameObject.Find("PassiveInfoCanvas").GetComponent<CanvasGroup>();
+                _passiveInfoCanvasGroup.DOFade(1, .5f);
+
                 canvasGroup.DOFade(1, 0.5f);
                 EnableColor(false);
             }
@@ -46,8 +50,8 @@ namespace KHJ.Tutorial
                 imageList[info.CurrentAmount - 1].EnableImage(true);
 
             nameDesText.text = $"{info.QuestName} <size=26><color=#C3C3C3><i>{info.Description}</i></color></size>";
+            print($"�ٲ� : {nameDesText.text}");
 
-            print($"IsEnd : {info.IsEndQuest}");
             if (info.CurrentAmount >= info.RequiredAmount)
                 TweenUI(info.IsEndQuest);
         }
@@ -68,9 +72,14 @@ namespace KHJ.Tutorial
 
         private void CheckEndQuest(Sequence sq, bool isEnd)
         {
-            print($"맞미ㅏㄱ이다다다다다 {isEnd}");
             if (isEnd)
+            {
+                if (!_passiveInfoCanvasGroup)
+                    _passiveInfoCanvasGroup = GameObject.Find("PassiveInfoCanvas").GetComponent<CanvasGroup>();
+                _passiveInfoCanvasGroup.DOFade(0, .5f);
                 canvasGroup.DOFade(0, 0.5f);
+            }
+
 
             EnableColor(false);
         }

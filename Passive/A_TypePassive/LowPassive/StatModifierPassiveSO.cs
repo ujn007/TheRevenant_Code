@@ -1,12 +1,7 @@
-﻿using Main.Runtime.Agents;
-using Main.Runtime.Core.StatSystem;
+﻿using KHJ.Shared;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
 using PJH.Runtime.Players;
-using Sirenix.OdinInspector;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Sirenix.Serialization;
 using UnityEngine;
 

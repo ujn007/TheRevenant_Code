@@ -1,0 +1,18 @@
+{
+    "name": "KHJ.Editor",
+    "rootNamespace": "KHJ.Editor",
+    "references": [
+        "GUID:9b4ea7516bf5c4643a54af71637516d1"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

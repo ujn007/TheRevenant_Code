@@ -1,7 +1,7 @@
+using KHJ.Shared;
 using Main.Shared;
 using PJH.Runtime.PlayerPassive;
 using Sirenix.Serialization;
-using System;
 using UnityEngine;
 
 namespace KHJ.Passive
@@ -10,6 +10,7 @@ namespace KHJ.Passive
     public class MadnessRhythmPassiveSO : PassiveSO, IModifierStatPassive
     {
         [SerializeField] private int _hitStack;
+        [SerializeField] private int _maxHitStack;
         [field: SerializeField, OdinSerialize] public ModifierStatInfo ModifierStatInfo { get; set; }
 
         public override void EquipPiece(IPlayer player)
@@ -28,18 +29,20 @@ namespace KHJ.Passive
 
         private void HandleHitEvent(HitInfo info)
         {
-            ++_hitStack;
+            _hitStack += 2;
             ChangeStatValue(_hitStack);
         }
 
         private void HandleDamagedEvent(float obj)
         {
             _hitStack = 0;
-            ChangeStatValue(_hitStack); 
+            ChangeStatValue(_hitStack);
         }
 
         private void ChangeStatValue(int value)
         {
+            if (value >= _maxHitStack) return;
+
             for (int i = 0; i < ModifierStatInfo.ModifierStats.Length; i++)
             {
                 ModifierStatInfo.ModifierStats[i].modifierValue = value;

@@ -1,6 +1,5 @@
 using Animancer;
 using PJH.Runtime.Players;
-using YTH.Enemies;
 
 namespace KHJ.Tutorial
 {
@@ -17,6 +16,6 @@ namespace KHJ.Tutorial
             player.GetCompo<PlayerFullMount>().OnFullMount -= Handle;
         }
 
-        private void Handle(ITransition v) => goal.HandleIncreaseAmount();
+        private void Handle() => goal.HandleIncreaseAmount();
     }
 }

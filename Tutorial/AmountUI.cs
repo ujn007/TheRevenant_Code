@@ -24,10 +24,11 @@ namespace KHJ.Tutorial
                 _enableEvent?.Invoke();
             fillImage.enabled = isEnable;
         }
+
         public void EnableScreenImage(bool v)
         {
             screenImage.enabled = v;
-            screenImage.DOFade(0.85f, 0.2f).startValue = Vector4.zero;
+            screenImage.DOFade(0.85f, 0.2f).SetLink(screenImage.gameObject).startValue = Vector4.zero;
         }
     }
 }

@@ -32,8 +32,8 @@ namespace KHJ
 
         public void GetFisrtAndEnd()
         {
-            // firstSlot = inventoryInfoSO.fistSlot;
-            // endSlot = inventoryInfoSO.endSlot;
+            firstSlot = inventoryInfoSO.fistSlot;
+            endSlot = inventoryInfoSO.endSlot;
         }
 
         public Vector2Int GetGridPos(Vector2 pos = default)
@@ -41,7 +41,7 @@ namespace KHJ
             if (pos == default)
                 pos = GetMousePos();
 
-            //if (!IsWithinGridBounds(pos)) return Vector2Int.down;
+            if (!IsWithinGridBounds(pos)) return Vector2Int.down;
 
             int childCount = inventoryInfoSO.childCount - 1;
             int childchildCount = inventoryInfoSO.childchildCount - 1;

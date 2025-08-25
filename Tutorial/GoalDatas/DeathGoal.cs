@@ -1,8 +1,4 @@
-using Main.Runtime.Combat;
 using PJH.Runtime.Players;
-using System;
-using UnityEngine;
-using YTH.Enemies;
 
 namespace KHJ.Tutorial
 {
