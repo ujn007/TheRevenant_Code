@@ -75,12 +75,16 @@ namespace KHJ.Dialogue
                 string line = data.DialogueLines[i].contents;
                 text.text = "";
 
+                var sb = new System.Text.StringBuilder(line.Length);
+
                 for (int j = 0; j < line.Length; ++j)
                 {
-                    text.text += line[j];
+                    sb.Append(line[j]);
+                    text.text = sb.ToString();
                     yield return wait;
 
                     Main.Runtime.Manager.Managers.FMODManager.PlayTypingSound();
+
                     if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
                     {
                         text.text = line;
@@ -89,8 +93,10 @@ namespace KHJ.Dialogue
                 }
 
                 if (i + 1 == dataLineLength && isChoiceDialogue) break;
+
                 yield return new WaitForSecondsRealtime(0.5f);
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space));
+
                 Main.Runtime.Manager.Managers.FMODManager.PlayTextClickSound();
                 data.DialogueLines[i].speakEvent?.Invoke();
             }
