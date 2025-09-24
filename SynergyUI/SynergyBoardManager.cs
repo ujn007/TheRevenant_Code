@@ -23,8 +23,8 @@ namespace KHJ
         public SynergySlotUI[] serveBoard { get; private set; }
         public SynergyType[] synergyServeBoard { get; private set; }
 
-        private int rangeX => 12;
-        private int rangeY => 10;
+        private readonly int rangeX = 12;
+        private readonly int rangeY = 10;
 
         private List<SynergyBlock> detectSynergyBlockList = new();
         private List<SynergyBlock> blockList = new();
@@ -52,14 +52,6 @@ namespace KHJ
         private void OnEnable()
         {
             DetectTriangle();
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.U))
-            {
-                blockList.ForEach(x => x.DecreaseStat());
-            }
         }
 
         private void SetPoses()
