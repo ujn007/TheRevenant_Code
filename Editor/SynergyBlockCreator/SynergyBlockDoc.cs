@@ -25,7 +25,7 @@ public class ButtonInfo
 }
 
 #if UNITY_EDITOR
-public class SynergyBlockDoc : EditorWindow
+public class SynergyBlockEditor : EditorWindow
 {
     private const int GRID_SIZE = 11;
     private const int CENTER_INDEX = GRID_SIZE / 2;
@@ -63,7 +63,7 @@ public class SynergyBlockDoc : EditorWindow
     [MenuItem("Tools/SynergyBlock")]
     public static void ShowWindow()
     {
-        var wnd = GetWindow<SynergyBlockDoc>();
+        var wnd = GetWindow<SynergyBlockEditor>();
         wnd.titleContent = new GUIContent("SynergyBlock");
     }
 
@@ -92,7 +92,7 @@ public class SynergyBlockDoc : EditorWindow
         var synergyButtons = root.Query<Button>(className: "SynergyBtn").ToList();
         if (synergyButtons == null || synergyButtons.Count < GRID_SIZE * GRID_SIZE)
         {
-            Debug.LogError($"SynergyBlockDoc: expected {GRID_SIZE * GRID_SIZE} buttons with class 'SynergyBtn'. Found {synergyButtons?.Count ?? 0}");
+            Debug.LogError($"SynergyBlockEditor: expected {GRID_SIZE * GRID_SIZE} buttons with class 'SynergyBtn'. Found {synergyButtons?.Count ?? 0}");
             return;
         }
 
@@ -178,7 +178,7 @@ public class SynergyBlockDoc : EditorWindow
         var so = _blockSOField?.value as SynergySO;
         if (so == null)
         {
-            Debug.LogWarning("SynergyBlockDoc: No SynergySO assigned to BlockSOField.");
+            Debug.LogWarning("SynergyBlockEditor: No SynergySO assigned to BlockSOField.");
             return;
         }
 
@@ -194,7 +194,7 @@ public class SynergyBlockDoc : EditorWindow
         var centerInfo = GetButtonInfo(_realBtn);
         if (centerInfo == null)
         {
-            Debug.LogError("SynergyBlockDoc: RealBtn mapping not found.");
+            Debug.LogError("SynergyBlockEditor: RealBtn mapping not found.");
             return;
         }
 
