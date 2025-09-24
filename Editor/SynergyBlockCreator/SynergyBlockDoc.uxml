@@ -1,0 +1,163 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/00Work/KHJ/11.UI/SynergyBlockDoc.uss?fileID=7433441132597879392&amp;guid=8028880866640c5419467913a78e087b&amp;type=3#SynergyBlockDoc" />
+    <engine:VisualElement name="Container" style="align-items: flex-start; flex-direction: row; justify-content: flex-start; align-content: auto; -unity-background-scale-mode: stretch-to-fill; flex-basis: auto; flex-shrink: 1; align-self: auto;">
+        <engine:VisualElement name="SynergyBlockContianer" style="height: 100%; flex-direction: row; flex-wrap: nowrap; align-items: auto; justify-content: flex-start; align-self: auto; align-content: auto; width: 600px; flex-shrink: 0;">
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="RealBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s; background-color: rgb(0, 172, 255);" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="SynergyBlock" style="flex-direction: column-reverse;">
+                <engine:Button name="SynergyBtn" binding-path="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+                <engine:Button name="SynergyBtn" class="SynergyBtn" style="transition-delay: 0s; transition-duration: 0.1s;" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement name="ButtonContainer" style="flex-direction: row; justify-content: flex-start; flex-wrap: wrap; align-items: flex-start; align-self: stretch; align-content: auto; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 5px; flex-basis: auto;">
+            <engine:TextField label="이름" placeholder-text="이름을 적으세요" name="NameTextField" class="textField" style="justify-content: space-around;" />
+            <engine:TextField label="설명" placeholder-text="설명을 적으세요" name="DescriptionTextField" class="textField" />
+            <engine:TextField label="가격" placeholder-text="가격을 적으세요" name="PriceTextField" class="textField" />
+            <engine:TextField label="등급" placeholder-text="등급을 적어" name="GradeTextField" class="textField" />
+            <editor:ObjectField label="아이콘" type="UnityEngine.Sprite, UnityEngine.CoreModule" name="IconSpriteField" class="objectField" />
+            <engine:DropdownField label="시너지 타입" choices="Warrior,Guardion,Stun,Health,Money" name="ChooseTypeField" style="justify-content: flex-start; font-size: 17px; -unity-text-align: middle-center; -unity-font-style: bold; background-color: rgb(91, 91, 91); width: 100%;" />
+            <editor:ObjectField label="스탯 타입" type="Main.Runtime.Core.StatSystem.StatSO, Main.Runtime.Core.StatSystem" name="StatSOField" class="objectField" style="width: 100%; margin-top: 29px;" />
+            <engine:TextField label="스탯 수치" placeholder-text="수치를 적으세요" name="StatIncTextField" class="textField" style="justify-content: space-around;" />
+            <engine:Button text="생성 or 수정" name="CreateBtn" style="flex-basis: auto; font-size: 23px; -unity-font-style: bold; -unity-text-align: middle-center; width: 100%; transform-origin: center 50px; translate: 0 0;" />
+            <editor:ObjectField label="수정할 블록 타입" type="SynergySO, KHJ" name="BlockSOField" class="objectField" style="width: 100%; margin-top: 1px; translate: 0 205px;" />
+            <engine:Button text="불러오기" name="LoadSOBtn" style="flex-basis: auto; font-size: 23px; -unity-font-style: bold; -unity-text-align: middle-center; width: 100%; transform-origin: center 50px; translate: 0 205px;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
